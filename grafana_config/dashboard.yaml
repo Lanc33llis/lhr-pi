@@ -1,0 +1,7 @@
+# We can make this using the grafana UI, just need the data to see what kind of stuff we should do
+# apiVersion: 1
+
+# providers:
+#   - name: "Longhorn Racing"
+#   updateIntervalSeconds: 1
+#   allowUiUpdates: true
