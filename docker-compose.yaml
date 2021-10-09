@@ -21,6 +21,8 @@ services:
       - grafana_storage:/var/lib/grafana
       - ./grafana_config/grafana.ini:/etc/grafana/grafana.ini
       - ./grafana_config/influxdb.yaml:/etc/grafana/provisioning/datasources/influxdb.yaml
+      - ./grafana_config/dashboard.yaml:/etc/grafana/provisioning/dashboards/dashboard.yaml
+      - ./grafana_config/dashboards:/var/lib/grafana/dashboards
     ports:
       - 3000:3000
     depends_on:
