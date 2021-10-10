@@ -30,6 +30,9 @@ async def tester():
             b = Point("State of Charge").field("Battery", random.randrange(0, 100) / 100 * 100)
             r += [b]
 
+            c = Point("Current").field("Car", random.randrange(-20000, 55000))
+            r += [c]
+
             write_api.write(bucket=bucket, record=r)
         except Exception:
             pass
