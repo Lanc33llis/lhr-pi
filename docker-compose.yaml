@@ -32,7 +32,7 @@ services:
     build:
       context: .
       args:
-        reload: true
+        reload: 1
     restart: always
     env_file:
       - .env
