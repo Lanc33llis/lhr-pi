@@ -1,6 +1,10 @@
+FROM python:3.9-slim-buster AS base
+
 ARG reload
 
-FROM python:3.9-slim-buster AS base
+RUN apt-get update
+RUN apt-get install -y gcc
+
 RUN mkdir /lhr-pi
 COPY requirements.txt /lhr-pi
 RUN pip3 install --no-cache-dir --upgrade -r /lhr-pi/requirements.txt

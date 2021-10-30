@@ -36,7 +36,7 @@ async def tester():
             write_api.write(bucket=bucket, record=r)
         except Exception:
             pass
-        await asyncio.sleep(.1)
+        await asyncio.sleep(.2)
 
 app = FastAPI()
 
