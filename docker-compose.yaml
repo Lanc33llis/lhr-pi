@@ -56,10 +56,12 @@ services:
     container_name: hostapd
     image: jsiu/hostapd:latest
     restart: always
+    network_mode: host
+    privileged: true
     env_file:
       - .env
     volumes: 
-      - ./hostapd.conf:/etc/hostapd.conf
+      - ./hostapd.conf:/etc/hostapd.conf:ro
     depends_on:
       - nginx
 volumes: 
