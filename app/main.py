@@ -50,4 +50,5 @@ async def on_startup():
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    ip = os.environ.get("PI_IP")
+    return templates.TemplateResponse("index.html", {"request": request, "ip": ip})
