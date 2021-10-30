@@ -7,10 +7,10 @@ RUN pip3 install --no-cache-dir --upgrade -r /lhr-pi/requirements.txt
 COPY app /lhr-pi/app
 WORKDIR /lhr-pi
 
-FROM base AS branch-version-true
+FROM base AS branch-version-1
 ENV RELOAD="--reload"
 
-FROM base AS branch-version-false
+FROM base AS branch-version-0
 ENV RELOAD=""
 
 FROM base AS branch-version-

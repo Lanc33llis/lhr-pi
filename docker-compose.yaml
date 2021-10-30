@@ -32,7 +32,7 @@ services:
     build:
       context: .
       args:
-        reload: true
+        reload: 1
     restart: always
     env_file:
       - .env
@@ -52,6 +52,14 @@ services:
       - ./nginx_templates:/etc/nginx/templates
     depends_on:
       - app
+  hostapd:
+    container_name: hostapd
+    image: jsiu/hostapd:latest
+    restart: always
+    volumes: 
+      - ./hostapd.conf:/etc/hostapd.conf
+    depends_on:
+      - nginx
 volumes: 
   influxdb:
   grafana_storage:
