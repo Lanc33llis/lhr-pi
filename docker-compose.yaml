@@ -62,6 +62,8 @@ services:
       - .env
     volumes: 
       - ./hostapd.conf:/etc/hostapd/hostapd.conf:ro
+      - ./sysctl.conf:/etc/sysctl.conf:ro
+      - ./interfaces:/etc/network/interfaces:ro
     depends_on:
       - nginx
 volumes: 
