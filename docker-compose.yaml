@@ -54,18 +54,10 @@ services:
       - app
   hostapd:
     container_name: hostapd
-    image: kimyejean02/lhr-hostapd:buildx-latest
-    restart: always
-    network_mode: host
-    privileged: true
-    env_file:
-      - .env
-    volumes: 
-      - ./hostapd.conf:/etc/hostapd/hostapd.conf:ro
-      - ./sysctl.conf:/etc/sysctl.conf:ro
-      - ./interfaces:/etc/network/interfaces:ro
-    depends_on:
-      - nginx
+    image: offlinehacker/docker-ap:latest
+    restart: unless-stopped
+    privileged: True
+    network_mode: "host"
 volumes: 
   influxdb:
   grafana_storage:
