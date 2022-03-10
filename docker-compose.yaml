@@ -64,7 +64,7 @@ services:
       - SSID=lhrpi
       - AP_ADDR=198.168.254.1
       - SUBNET=198.168.254.0
-      - WPA_PASSPHRASE=lhr
+      - WPA_PASSPHRASE=password
       - OUTGOINGS=docker0
 volumes: 
   influxdb:
