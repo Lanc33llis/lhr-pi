@@ -54,10 +54,18 @@ services:
       - app
   hostapd:
     container_name: hostapd
-    image: offlinehacker/docker-ap:latest
+    image: sdelrio/rpi-hostap:latest
     restart: unless-stopped
-    privileged: True
+    privileged: true
     network_mode: "host"
+    environment:
+      - INTERFACE=wlan0
+      - CHANNEL=6
+      - SSID=lhrpi
+      - AP_ADDR=198.168.254.1
+      - SUBNET=198.168.254.0
+      - WPA_PASSPHRASE=lhr
+      - OUTGOINGS=docker0
 volumes: 
   influxdb:
   grafana_storage:
